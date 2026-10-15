@@ -3,19 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aincrad Survival RPG - Advanced Edition</title>
-    <!-- Ikinokonekta nito ang CSS file -->
+    <title>Aincrad Survival RPG - 2D Animation Edition</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="game-container">
     <div class="header">
-        <h2 id="title-display">🏰 AINCRAD SURVIVAL</h2>
+        <h2 id="title-display">🏰 AINCRAD SURVIVAL 2D</h2>
         <span id="floor-display">FLOOR: 1 / 100</span>
     </div>
 
-    <!-- CHARACTER STYLE & SKIN DISPLAY -->
+    <!-- 🎨 2D ANIMATION CANVAS SCREEN -->
+    <div class="panel" style="padding: 0; overflow: hidden; border: 2px solid #334155;">
+        <canvas id="gameCanvas" width="600" height="180" style="background: #111827; display: block; width: 100%;"></canvas>
+    </div>
+
     <div class="panel style-panel">
         👤 Current Skin: <span id="skin-display" class="badge">Default Swordsman</span>
     </div>
@@ -33,9 +36,9 @@
         <strong style="color: #38bdf8;">🎒 Inventory & Weapon Select:</strong>
         <div style="margin-top: 8px;">
             🧪 Potions: <span id="potions-count">1</span> | 
-            🏹 Current Weapon: <span id="weapon-display" style="font-weight: bold; color: #a7f3d0;">Starter Sword</span>
+            🏹 Weapon: <span id="weapon-display" style="font-weight: bold; color: #a7f3d0;">Starter Sword</span>
         </div>
-        <div class="weapon-switch-box" style="margin-top: 10px;">
+        <div class="weapon-switch-box" style="margin-top: 10px; display: grid; grid-template-columns: 1fr 1fr; gap: 5px;">
             <button onclick="switchWeapon('sword')">⚔️ Equip Sword</button>
             <button onclick="switchWeapon('bow')">🏹 Equip Bow</button>
         </div>
@@ -60,7 +63,7 @@
 
     <!-- GAME LOG -->
     <div class="log-box" id="log-box">
-        <p>[System] Welcome back, Player. Na-load ang iyong huling save file.</p>
+        <p>[System] Welcome back, Player. Ready for Link Start.</p>
     </div>
 
     <!-- ACTION CONTROLS -->
@@ -72,14 +75,12 @@
         <button class="btn-raid" id="raid-btn" onclick="startRaid()">👹 START FLOOR RAID (Join Force)</button>
     </div>
 
-    <!-- CONTROL UTILITIES -->
     <div style="margin-top: 15px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
         <button onclick="saveGame()" style="background: #10b981;">💾 Manual Save Game</button>
         <button onclick="clearSave()" style="background: #ef4444;">🗑️ Reset Character</button>
     </div>
 </div>
 
-<!-- Ikinokonekta nito ang JavaScript file -->
 <script src="script.js"></script>
 </body>
 </html>
