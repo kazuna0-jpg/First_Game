@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aincrad Survival RPG - Advanced Edition</title>
+    <!-- Ikinokonekta nito ang CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="game-container">
+    <div class="header">
+        <h2 id="title-display">🏰 AINCRAD SURVIVAL</h2>
+        <span id="floor-display">FLOOR: 1 / 100</span>
+    </div>
+
+    <!-- CHARACTER STYLE & SKIN DISPLAY -->
+    <div class="panel style-panel">
+        👤 Current Skin: <span id="skin-display" class="badge">Default Swordsman</span>
+    </div>
+
+    <!-- PLAYER STATS -->
+    <div class="panel stats-grid">
+        <div>❤️ HP: <span id="hp-display">100</span>/100</div>
+        <div>🍖 Hunger: <span id="hunger-display">100</span>/100</div>
+        <div>⚔️ Total ATK: <span id="atk-display">12</span></div>
+        <div>💰 Col: <span id="gold-display">50</span></div>
+    </div>
+
+    <!-- WEAPON & INVENTORY -->
+    <div class="panel">
+        <strong style="color: #38bdf8;">🎒 Inventory & Weapon Select:</strong>
+        <div style="margin-top: 8px;">
+            🧪 Potions: <span id="potions-count">1</span> | 
+            🏹 Current Weapon: <span id="weapon-display" style="font-weight: bold; color: #a7f3d0;">Starter Sword</span>
+        </div>
+        <div class="weapon-switch-box" style="margin-top: 10px;">
+            <button onclick="switchWeapon('sword')">⚔️ Equip Sword</button>
+            <button onclick="switchWeapon('bow')">🏹 Equip Bow</button>
+        </div>
+    </div>
+
+    <!-- SHOP & SKINS -->
+    <div class="panel">
+        <strong style="color: #eab308;">🛒 Skin & Upgrade Shop:</strong>
+        <div class="shop-grid" style="margin-top: 8px; display: grid; grid-template-columns: 1fr 1fr; gap: 5px;">
+            <button onclick="buySkin('Knights of the Blood', 150)">🛡️ Buy KoB Skin (150 Col)</button>
+            <button onclick="buySkin('Dual Wielder', 300)">⚔️ Buy Dual Wield (300 Col)</button>
+        </div>
+    </div>
+
+    <!-- MISSIONS BOARD -->
+    <div class="panel" style="border-left: 4px solid #3b82f6;">
+        <strong style="color: #60a5fa;">📜 Active Mission Board:</strong>
+        <div id="mission-content" style="font-size: 13px; margin-top: 5px; color: #cbd5e1;">
+            Kumpletuhin ang mga paglalakbay para makahanap ng Mission!
+        </div>
+    </div>
+
+    <!-- GAME LOG -->
+    <div class="log-box" id="log-box">
+        <p>[System] Welcome back, Player. Na-load ang iyong huling save file.</p>
+    </div>
+
+    <!-- ACTION CONTROLS -->
+    <div class="actions-grid">
+        <button onclick="explore()">🌲 Explore Area</button>
+        <button onclick="checkMissions()">🦅 Accept Mission</button>
+        <button onclick="usePotion()">🧪 Use Potion (+40 HP)</button>
+        <button onclick="buySupplies()">🍖 Buy Food (30 Col)</button>
+        <button class="btn-raid" id="raid-btn" onclick="startRaid()">👹 START FLOOR RAID (Join Force)</button>
+    </div>
+
+    <!-- CONTROL UTILITIES -->
+    <div style="margin-top: 15px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+        <button onclick="saveGame()" style="background: #10b981;">💾 Manual Save Game</button>
+        <button onclick="clearSave()" style="background: #ef4444;">🗑️ Reset Character</button>
+    </div>
+</div>
+
+<!-- Ikinokonekta nito ang JavaScript file -->
+<script src="script.js"></script>
+</body>
+</html>
